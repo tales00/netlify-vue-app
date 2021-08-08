@@ -1,9 +1,9 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import App from './App.vue';
 
-//css
-import "sanitize.css";
-import "line-awesome/dist/line-awesome/css/line-awesome.min.css";
-import "@/scss/base.scss";
+//css import
+import 'sanitize.css';
+import 'line-awesome/dist/line-awesome/css/line-awesome.min.css';
+import '@/scss/base.scss';
 
-createApp(App).mount("#app");
+createApp(App).mount('#app');
