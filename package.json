@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "line-awesome": "^1.3.0",
+    "rss-parser": "^3.12.0",
     "sanitize.css": "^12.0.1",
     "vue": "^3.0.0"
   },
