@@ -88,6 +88,15 @@ export default {
   // @media (orientation: landscape) and (min-width: 800px) {
   //   grid-template-rows: auto;
   // }
+  background: var(--app-bg-color);
+
+  background-image: linear-gradient(
+      180deg,
+      hsla(184, 48%, 53%, 0.6) 0%,
+      hsl(184, 48%, 53%) 100%
+    ),
+    url('assets/img/header_bg_harekaze_curry.jpg');
+  background-size: cover;
 }
 
 .card {
