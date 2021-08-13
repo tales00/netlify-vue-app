@@ -2,11 +2,14 @@
 const Parser = require('rss-parser');
 const parserInst = new Parser();
 const handler = async (event) => {
+  const params = event.path.split('/');
+  const idx = params.indexOf('getPlurkUser');
+  const [id] = params.splice(idx + 1);
   try {
-    const userAcc = event.queryStringParameters.id;
-    let feed = await parserInst.parseURL(
-      `https://www.plurk.com/${userAcc}.xml`,
-    );
+    if (!id) {
+      throw new Error('param lost');
+    }
+    let feed = await parserInst.parseURL(`https://www.plurk.com/${id}.xml`);
     feed.items.reverse();
     return {
       statusCode: 200,
