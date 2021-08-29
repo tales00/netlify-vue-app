@@ -11,6 +11,7 @@
         p CSS(RWD) 亦有相當程度的掌握。
         p 平常低調的在 #[a(@click="handleLink('hobby')") 噗浪活動，偶而也畫一點圖]
         p 目前待業中，若您剛好需要人手，而剛好我也合適的話， #[a(@click="handleLink('contact')") 還請與我聯絡。]
+
     .panel.biography
       h3.caption #[i.las.la-file-alt] biography
       .date
@@ -49,6 +50,7 @@
         .mark 2020/06~
       .doing
         | 嚐試著自己建立一個商店網站，但就結果而言是失敗的
+
     .panel.skill
       h3.caption #[i.las.la-magic] skill
       .skill-name
@@ -87,16 +89,30 @@
         .mark PHP
       .skill-desc
         | 硬要說的話是會一點
+
+    .panel.sideProject
+      h3.caption #[i.las.la-project-diagram] side project
+      .project-icon
+        img.round(src="@/assets/img/cleanup-url-app-iconn-512x512.png")
+      .project-desc
+        h5 #[a(href="https://url-cleanup.netlify.app/" target="_blank") url cleanup app]
+        ul
+          li 一個 PWA, 有接收 share target 的功能
+          li 主要用來清理網址中冗餘的追蹤碼參數，縮短字數，以利分享（或再分享）
+
     .panel.hobby
       h3.caption #[i.las.la-heart] HOBBY
       .hobby-icon
         img.round(src="@/assets/img/logo-plurk.png")
       .hobby-desc
+        h5 Plurk
         a(href="https://www.plurk.com/taleslogs" target="_blank") 看看我平常的一些碎碎念
       .hobby-icon
         img.round(src="@/assets/img/logo-pixiv.svg")
       .hobby-desc
+        h5 Pixiv
         a(href="https://pixiv.me/tales00" target="_blank") 看看我畫的一些圖
+
     .panel.contact
       h3.caption #[i.las.la-phone] contact
       .icon
@@ -119,6 +135,10 @@ export default {
 <style lang="scss" scoped>
 .home {
   padding-top: var(--nav-height);
+}
+h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 .container {
   display: grid;
@@ -185,19 +205,33 @@ export default {
     }
   }
 
-  .hobby {
+  .hobby,
+  .sideProject {
     display: grid;
     grid-template-columns: 4rem 1fr;
     gap: 0.4rem 1rem;
     align-items: center;
 
-    .hobby-icon {
+    .hobby-icon,
+    .project-icon {
       img {
         display: block;
         max-width: 100%;
       }
     }
-    .hobby-desc {
+    .hobby-desc,
+    .project-desc {
+      font-size: 0.8rem;
+      ul {
+        padding: 0;
+        padding-left: 1rem;
+        margin: 0;
+        display: grid;
+
+        li {
+          // display: block;
+        }
+      }
     }
   }
 
